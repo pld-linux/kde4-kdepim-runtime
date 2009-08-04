@@ -18,39 +18,22 @@ URL:		http://www.kde.org/
 BuildRequires:	QtDesigner-devel
 BuildRequires:	akonadi-devel >= 1.1.2
 BuildRequires:	automoc4 >= 0.9.88
-BuildRequires:	bison
-BuildRequires:	bluez-libs-devel
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	cmake >= 2.6.3
-BuildRequires:	cyrus-sasl-devel
-BuildRequires:	docbook-dtd42-xml
-BuildRequires:	ed
-BuildRequires:	flex
-BuildRequires:	gpgme-devel >= 1:1.0.0
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdelibs-experimental >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
-BuildRequires:	libassuan-devel
-BuildRequires:	libgnokii-devel
-BuildRequires:	libmal-devel >= 0.31
-BuildRequires:	libopensync-devel >= 1:0.38
-BuildRequires:	libxslt-progs
-BuildRequires:	lockdev-devel
-BuildRequires:	openssl-devel
-BuildRequires:	pcre-devel
 BuildRequires:	pilot-link-devel >= 0.12.1
 BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	soprano-devel >= 2.3.0
 BuildRequires:	strigi-devel >= 0.6.5
-BuildRequires:	xorg-lib-libXScrnSaver-devel
 BuildRequires:	zlib-devel
 BuildConflicts:	indexlib
 BuildConflicts:	kdepim-kontact-libs
 BuildConflicts:	kdepim-libkmailprivate
 Provides:	kde4-kdepim-akonadi
-Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
