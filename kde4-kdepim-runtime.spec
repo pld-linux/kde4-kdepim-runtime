@@ -113,17 +113,17 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_kolabproxy_resource
 %attr(755,root,root) %{_bindir}/akonadi_microblog_resource
 %attr(755,root,root) %{_bindir}/kres-migrator
-%attr(755,root,root) %{_libdir}/libakonadi-kabccommon.so.?
+%attr(755,root,root) %ghost %{_libdir}/libakonadi-kabccommon.so.?
 %attr(755,root,root) %{_libdir}/libakonadi-kabccommon.so.*.*.*
-%attr(755,root,root) %{_libdir}/libakonadi-kcal.so.?
+%attr(755,root,root) %ghost %{_libdir}/libakonadi-kcal.so.?
 %attr(755,root,root) %{_libdir}/libakonadi-kcal.so.*.*.*
-%attr(755,root,root) %{_libdir}/libakonadi-xml.so.?
+%attr(755,root,root) %ghost %{_libdir}/libakonadi-xml.so.?
 %attr(755,root,root) %{_libdir}/libakonadi-xml.so.*.*.*
-%attr(755,root,root) %{_libdir}/libakonadi_next.so.?
+%attr(755,root,root) %ghost %{_libdir}/libakonadi_next.so.?
 %attr(755,root,root) %{_libdir}/libakonadi_next.so.*.*.*
-%attr(755,root,root) %{_libdir}/libkdepim-copy.so.?
+%attr(755,root,root) %ghost %{_libdir}/libkdepim-copy.so.?
 %attr(755,root,root) %{_libdir}/libkdepim-copy.so.*.*.*
-%attr(755,root,root) %{_libdir}/libmaildir.so.?
+%attr(755,root,root) %ghost %{_libdir}/libmaildir.so.?
 %attr(755,root,root) %{_libdir}/libmaildir.so.*.*.*
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_addressee.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_contactgroup.so
