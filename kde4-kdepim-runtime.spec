@@ -1,6 +1,6 @@
 
 %define		_state		stable
-%define		qtver		4.5.2
+%define		qtver		4.5.3
 
 %define		orgname	kdepim-runtime
 
