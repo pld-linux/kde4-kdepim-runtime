@@ -1,18 +1,19 @@
 
-%define		_state		stable
+%define		_state		unstable
 %define		qtver		4.5.3
+%define         snap            svn1027298
 
 %define		orgname	kdepim-runtime
 
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.3.2
+Version:	4.3.69
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	a998b2d6e62e79a80fefc2b3c632a3b8
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
+# Source0-md5:	aa5274eab2a2554c61ab40225dc3e628
 #Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	QtDesigner-devel
@@ -49,9 +50,9 @@ kdepim jest jest zestawem aplikacji PIM dla K Desktop Environment
 Summary:	Kontact Personal Information Management
 Summary(pl.UTF-8):	Kontact Personal Information Management
 Group:		X11/Applications
+Requires:	pinentry-qt4
 Provides:	kde4-kontact
 Obsoletes:	kde4-kontact
-Requires:	pinentry-qt4
 
 %description kontact
 Kontact Personal Information Management.
@@ -60,7 +61,7 @@ Kontact Personal Information Management.
 Kontact Personal Information Management.
 
 %prep
-%setup -q -n %{orgname}-%{version}
+%setup -q -n %{orgname}-%{version}%{snap}
 #%patch100 -p0
 
 %build
@@ -92,6 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/akonadi_contacts_resource
 %attr(755,root,root) %{_bindir}/akonadi_distlist_resource
 %attr(755,root,root) %{_bindir}/akonadi_ical_resource
 %attr(755,root,root) %{_bindir}/akonadi_kabc_resource
@@ -99,10 +101,15 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_knut_resource
 %attr(755,root,root) %{_bindir}/akonadi_localbookmarks_resource
 %attr(755,root,root) %{_bindir}/akonadi_maildir_resource
+%attr(755,root,root) %{_bindir}/akonadi_maildispatcher_agent
+%attr(755,root,root) %{_bindir}/akonadi_mailtransport_dummy_resource
+%attr(755,root,root) %{_bindir}/akonadi_mbox_resource
+%attr(755,root,root) %{_bindir}/akonadi_nepomuk_calendar_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuk_contact_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuk_email_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
+%attr(755,root,root) %{_bindir}/akonadi_notes_resource
 %attr(755,root,root) %{_bindir}/akonadi_strigi_feeder
 %attr(755,root,root) %{_bindir}/akonadi_vcard_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
@@ -113,9 +120,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_imap_resource
 %attr(755,root,root) %{_bindir}/akonadi_kolabproxy_resource
 %attr(755,root,root) %{_bindir}/akonadi_microblog_resource
+%attr(755,root,root) %{_bindir}/kaddressbookmigrator
+%attr(755,root,root) %{_bindir}/kmail-migrator
 %attr(755,root,root) %{_bindir}/kres-migrator
-%attr(755,root,root) %ghost %{_libdir}/libakonadi-kabccommon.so.?
-%attr(755,root,root) %{_libdir}/libakonadi-kabccommon.so.*.*.*
+#%attr(755,root,root) %ghost %{_libdir}/libakonadi-kabccommon.so.?
+#%attr(755,root,root) %{_libdir}/libakonadi-kabccommon.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libakonadi-kcal.so.?
 %attr(755,root,root) %{_libdir}/libakonadi-kcal.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libakonadi-xml.so.?
@@ -152,7 +161,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
 %dir %{_datadir}/akonadi
 %dir %{_datadir}/akonadi/agents
+%{_datadir}/akonadi/agents/contactsresource.desktop
 %{_datadir}/akonadi/agents/distlistresource.desktop
+%{_datadir}/akonadi/agents/maildispatcheragent.desktop
+%{_datadir}/akonadi/agents/mboxresource.desktop
+%{_datadir}/akonadi/agents/mtdummyresource.desktop
+%{_datadir}/akonadi/agents/nepomukcalendarfeeder.desktop
 %{_datadir}/akonadi/agents/strigifeeder.desktop
 %{_datadir}/akonadi/agents/vcardresource.desktop
 %{_datadir}/akonadi/agents/nntpresource.desktop
@@ -184,6 +198,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/kde4/akonaditray.desktop
 %{_datadir}/kde4/services/kresources/kcal/akonadi.desktop
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
+%{_datadir}/config/kmail-migratorrc
 %{_datadir}/config/kres-migratorrc
 %{_datadir}/kde4/services/kresources/kabc/akonadi.desktop
 %{_datadir}/mime/packages/kdepim-mime.xml
