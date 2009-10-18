@@ -1,19 +1,19 @@
 
 %define		_state		unstable
-%define		qtver		4.5.3
-%define         snap            svn1027298
+%define		qtver		4.6.0
+%define         snap            svn1035674
 
 %define		orgname	kdepim-runtime
 
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.3.69
+Version:	4.3.72
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5:	aa5274eab2a2554c61ab40225dc3e628
+# Source0-md5:	530bc1f0ae8eb1f9b3a2f3a6fe4b98a6
 #Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	QtDesigner-devel
@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/akonadi_contacts_resource
-%attr(755,root,root) %{_bindir}/akonadi_distlist_resource
+#%attr(755,root,root) %{_bindir}/akonadi_distlist_resource
 %attr(755,root,root) %{_bindir}/akonadi_ical_resource
 %attr(755,root,root) %{_bindir}/akonadi_kabc_resource
 %attr(755,root,root) %{_bindir}/akonadi_kcal_resource
@@ -106,11 +106,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_mbox_resource
 %attr(755,root,root) %{_bindir}/akonadi_nepomuk_calendar_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuk_contact_feeder
-%attr(755,root,root) %{_bindir}/akonadi_nepomuk_email_feeder
+#%attr(755,root,root) %{_bindir}/akonadi_nepomuk_email_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
 %attr(755,root,root) %{_bindir}/akonadi_notes_resource
-%attr(755,root,root) %{_bindir}/akonadi_strigi_feeder
+#%attr(755,root,root) %{_bindir}/akonadi_strigi_feeder
 %attr(755,root,root) %{_bindir}/akonadi_vcard_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/akonadiconsole
@@ -135,6 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdepim-copy.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmaildir.so.?
 %attr(755,root,root) %{_libdir}/libmaildir.so.*.*.*
+%attr(755,root,root) %{_libdir}/libmbox.so.*.*.*
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_addressee.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_contactgroup.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_mail.so
@@ -162,12 +163,12 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/akonadi
 %dir %{_datadir}/akonadi/agents
 %{_datadir}/akonadi/agents/contactsresource.desktop
-%{_datadir}/akonadi/agents/distlistresource.desktop
+#%{_datadir}/akonadi/agents/distlistresource.desktop
 %{_datadir}/akonadi/agents/maildispatcheragent.desktop
 %{_datadir}/akonadi/agents/mboxresource.desktop
 %{_datadir}/akonadi/agents/mtdummyresource.desktop
 %{_datadir}/akonadi/agents/nepomukcalendarfeeder.desktop
-%{_datadir}/akonadi/agents/strigifeeder.desktop
+#%{_datadir}/akonadi/agents/strigifeeder.desktop
 %{_datadir}/akonadi/agents/vcardresource.desktop
 %{_datadir}/akonadi/agents/nntpresource.desktop
 %{_datadir}/akonadi/agents/kcalresource.desktop
@@ -177,7 +178,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/localbookmarksresource.desktop
 %{_datadir}/akonadi/agents/maildirresource.desktop
 %{_datadir}/akonadi/agents/nepomukcontactfeeder.desktop
-%{_datadir}/akonadi/agents/nepomukemailfeeder.desktop
+#%{_datadir}/akonadi/agents/nepomukemailfeeder.desktop
 %{_datadir}/akonadi/agents/nepomuktagresource.desktop
 %{_datadir}/akonadi/agents/vcarddirresource.desktop
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
