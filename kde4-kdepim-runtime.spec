@@ -60,6 +60,23 @@ Kontact Personal Information Management.
 %description kontact -l pl.UTF-8
 Kontact Personal Information Management.
 
+%package devel
+Summary:	Development files for KDE pim-runtime
+Summary(pl.UTF-8):	Pliki nagłówkowe do KDE pim
+Summary(ru.UTF-8):	Файлы разработки для kdepim
+Summary(uk.UTF-8):	Файли розробки для kdepim
+Group:		X11/Development/Libraries
+Requires:	%{name} = %{version}-%{release}
+Requires:	kde4-kdelibs-devel >= %{version}
+
+%description devel
+This package contains header files needed if you wish to build
+applications based on kdepimruntime.
+
+%description devel -l pl.UTF-8
+Pakiet ten zawiera pliki nagłówkowe potrzebne do budowy aplikacji
+bazujących na kdepim-runtime.
+
 %prep
 %setup -q -n %{orgname}-%{version}%{snap}
 #%patch100 -p0
@@ -135,6 +152,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libkdepim-copy.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmaildir.so.?
 %attr(755,root,root) %{_libdir}/libmaildir.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libmbox.so.?
 %attr(755,root,root) %{_libdir}/libmbox.so.*.*.*
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_addressee.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_contactgroup.so
@@ -204,3 +222,12 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kresources/kabc/akonadi.desktop
 %{_datadir}/mime/packages/kdepim-mime.xml
 %{_iconsdir}/*/*/apps/kolab.png
+
+%files devel
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_libdir}/libakonadi-kcal.so
+%attr(755,root,root) %{_libdir}/libakonadi-xml.so
+%attr(755,root,root) %{_libdir}/libakonadi_next.so
+%attr(755,root,root) %{_libdir}/libkdepim-copy.so
+%attr(755,root,root) %{_libdir}/libmaildir.so
+%attr(755,root,root) %{_libdir}/libmbox.so
