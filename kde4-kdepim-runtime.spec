@@ -1,19 +1,19 @@
 
 %define		_state		unstable
-%define		qtver		4.6.0
-%define         snap            svn1035674
+%define		qtver       4.6.0
+%define     snap        svn1040395
 
 %define		orgname	kdepim-runtime
 
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.3.72
+Version:	4.3.73
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5:	530bc1f0ae8eb1f9b3a2f3a6fe4b98a6
+# Source0-md5:	f925fff7e5e640c87a6e8d373660e978
 #Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	QtDesigner-devel
@@ -130,6 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 #%attr(755,root,root) %{_bindir}/akonadi_strigi_feeder
 %attr(755,root,root) %{_bindir}/akonadi_vcard_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
+%attr(755,root,root) %{_bindir}/akonadi_pop3_resource
 %attr(755,root,root) %{_bindir}/akonadiconsole
 %attr(755,root,root) %{_bindir}/akonaditray
 %attr(755,root,root) %{_bindir}/akonadi2xml
@@ -198,6 +199,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/nepomukcontactfeeder.desktop
 #%{_datadir}/akonadi/agents/nepomukemailfeeder.desktop
 %{_datadir}/akonadi/agents/nepomuktagresource.desktop
+%{_datadir}/akonadi/agents/pop3resource.desktop
 %{_datadir}/akonadi/agents/vcarddirresource.desktop
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
 %{_datadir}/akonadi/agents/imapresource.desktop
