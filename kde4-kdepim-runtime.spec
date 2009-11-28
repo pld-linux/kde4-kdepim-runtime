@@ -7,12 +7,12 @@
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.3.3
+Version:	4.3.4
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	025bbb82f273d28c7507b5b366000b3f
+# Source0-md5:	e6fe3a639f4ab878dba2e84fd974e872
 #Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	QtDesigner-devel
@@ -99,8 +99,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_knut_resource
 %attr(755,root,root) %{_bindir}/akonadi_localbookmarks_resource
 %attr(755,root,root) %{_bindir}/akonadi_maildir_resource
-%attr(755,root,root) %{_bindir}/akonadi_nepomuk_contact_feeder
-%attr(755,root,root) %{_bindir}/akonadi_nepomuk_email_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
 %attr(755,root,root) %{_bindir}/akonadi_strigi_feeder
@@ -162,8 +160,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/kabcresource.desktop
 %{_datadir}/akonadi/agents/localbookmarksresource.desktop
 %{_datadir}/akonadi/agents/maildirresource.desktop
-%{_datadir}/akonadi/agents/nepomukcontactfeeder.desktop
-%{_datadir}/akonadi/agents/nepomukemailfeeder.desktop
 %{_datadir}/akonadi/agents/nepomuktagresource.desktop
 %{_datadir}/akonadi/agents/vcarddirresource.desktop
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
