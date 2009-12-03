@@ -15,17 +15,26 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 # Source0-md5:	e6fe3a639f4ab878dba2e84fd974e872
 #Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
+BuildRequires:	Qt3Support-devel
 BuildRequires:	QtDesigner-devel
+BuildRequires:	QtNetwork-devel
+BuildRequires:	QtSql-devel
+BuildRequires:	QtSvg-devel
+BuildRequires:	QtTest-devel
+BuildRequires:	QtWebKit-devel
 BuildRequires:	akonadi-devel >= 1.1.2
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	cmake >= 2.6.3
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-BuildRequires:	kde4-kdelibs-experimental >= %{version}
+BuildRequires:	kde4-kdelibs-experimental-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
+BuildRequires:	libxml2-devel
+BuildRequires:	libxslt-progs
 BuildRequires:	pilot-link-devel >= 0.12.1
 BuildRequires:	qca-devel >= 2.0.0
+BuildRequires:	qt4-build
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	soprano-devel >= 2.3.0
 BuildRequires:	strigi-devel >= 0.6.5
@@ -49,9 +58,9 @@ kdepim jest jest zestawem aplikacji PIM dla K Desktop Environment
 Summary:	Kontact Personal Information Management
 Summary(pl.UTF-8):	Kontact Personal Information Management
 Group:		X11/Applications
+Requires:	pinentry-qt4
 Provides:	kde4-kontact
 Obsoletes:	kde4-kontact
-Requires:	pinentry-qt4
 
 %description kontact
 Kontact Personal Information Management.
