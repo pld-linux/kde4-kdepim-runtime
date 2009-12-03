@@ -1,7 +1,7 @@
 
-%define		_state		unstable
-%define		qtver       4.6.0
-%define     snap        svn1040395
+%define		_state	unstable
+%define		qtver	4.6.0
+%define		snap	svn1040395
 
 %define		orgname	kdepim-runtime
 
@@ -16,17 +16,26 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 # Source0-md5:	f925fff7e5e640c87a6e8d373660e978
 #Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
+BuildRequires:	Qt3Support-devel
 BuildRequires:	QtDesigner-devel
+BuildRequires:	QtNetwork-devel
+BuildRequires:	QtSql-devel
+BuildRequires:	QtSvg-devel
+BuildRequires:	QtTest-devel
+BuildRequires:	QtWebKit-devel
 BuildRequires:	akonadi-devel >= 1.1.2
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	cmake >= 2.6.3
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-BuildRequires:	kde4-kdelibs-experimental >= %{version}
+BuildRequires:	kde4-kdelibs-experimental-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
+BuildRequires:	libxml2-devel
+BuildRequires:	libxslt-progs
 BuildRequires:	pilot-link-devel >= 0.12.1
 BuildRequires:	qca-devel >= 2.0.0
+BuildRequires:	qt4-build
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	soprano-devel >= 2.3.0
 BuildRequires:	strigi-devel >= 0.6.5
@@ -99,8 +108,8 @@ cd build
 rm -rf $RPM_BUILD_ROOT
 
 %{__make} -C build/ install \
-        DESTDIR=$RPM_BUILD_ROOT \
-        kde_htmldir=%{_kdedocdir}
+	DESTDIR=$RPM_BUILD_ROOT \
+	kde_htmldir=%{_kdedocdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
