@@ -8,28 +8,27 @@
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.3.73
+Version:	4.3.80
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}%{snap}.tar.bz2
-# Source0-md5:	f925fff7e5e640c87a6e8d373660e978
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	c86fcb4f0378069fea24bce05b6e2853
 #Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
-BuildRequires:	Qt3Support-devel
-BuildRequires:	QtDesigner-devel
-BuildRequires:	QtNetwork-devel
-BuildRequires:	QtSql-devel
-BuildRequires:	QtSvg-devel
-BuildRequires:	QtTest-devel
-BuildRequires:	QtWebKit-devel
-BuildRequires:	akonadi-devel >= 1.1.2
+BuildRequires:	Qt3Support-devel >= %{qtver}
+BuildRequires:	QtDesigner-devel >= %{qtver}
+BuildRequires:	QtNetwork-devel >= %{qtver}
+BuildRequires:	QtSql-devel >= %{qtver}
+BuildRequires:	QtSvg-devel >= %{qtver}
+BuildRequires:	QtTest-devel >= %{qtver}
+BuildRequires:	QtWebKit-devel >= %{qtver}
+BuildRequires:	akonadi-devel >= 1.2.80
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	cmake >= 2.6.3
 BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
-BuildRequires:	kde4-kdelibs-experimental-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
@@ -37,8 +36,9 @@ BuildRequires:	pilot-link-devel >= 0.12.1
 BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qt4-build
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	soprano-devel >= 2.3.0
-BuildRequires:	strigi-devel >= 0.6.5
+BuildRequires:	soprano-devel >= 2.3.70
+BuildRequires:	shared-desktop-ontologies-devel >= 0.2
+BuildRequires:	strigi-devel >= 0.7.0
 BuildRequires:	zlib-devel
 BuildConflicts:	indexlib
 BuildConflicts:	kdepim-kontact-libs
@@ -87,7 +87,7 @@ Pakiet ten zawiera pliki nagłówkowe potrzebne do budowy aplikacji
 bazujących na kdepim-runtime.
 
 %prep
-%setup -q -n %{orgname}-%{version}%{snap}
+%setup -q -n %{orgname}-%{version}
 #%patch100 -p0
 
 %build
@@ -176,6 +176,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/kcm_akonadi.so
 %attr(755,root,root) %{_libdir}/kde4/kcm_akonadi_server.so
 %attr(755,root,root) %{_libdir}/kde4/kcal_akonadi.so
+%{_datadir}/autostart/kaddressbookmigrator.desktop
 %dir %{_datadir}/apps/akonadi
 %{_datadir}/apps/akonadi/akonadi-xml.xsd
 %dir %{_datadir}/apps/akonadi_knut_resource
