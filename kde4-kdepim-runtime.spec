@@ -8,12 +8,12 @@
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.3.80
+Version:	4.3.85
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	c86fcb4f0378069fea24bce05b6e2853
+# Source0-md5:	23f26c523b8b6d8a273e337ce2703a4c
 #Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -132,15 +132,12 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_mbox_resource
 %attr(755,root,root) %{_bindir}/akonadi_nepomuk_calendar_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuk_contact_feeder
-#%attr(755,root,root) %{_bindir}/akonadi_nepomuk_email_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
 %attr(755,root,root) %{_bindir}/akonadi_notes_resource
-#%attr(755,root,root) %{_bindir}/akonadi_strigi_feeder
 %attr(755,root,root) %{_bindir}/akonadi_vcard_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/akonadi_pop3_resource
-%attr(755,root,root) %{_bindir}/akonadiconsole
 %attr(755,root,root) %{_bindir}/akonaditray
 %attr(755,root,root) %{_bindir}/akonadi2xml
 %attr(755,root,root) %{_bindir}/akonadi_birthdays_resource
@@ -150,14 +147,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/kaddressbookmigrator
 %attr(755,root,root) %{_bindir}/kmail-migrator
 %attr(755,root,root) %{_bindir}/kres-migrator
-#%attr(755,root,root) %ghost %{_libdir}/libakonadi-kabccommon.so.?
-#%attr(755,root,root) %{_libdir}/libakonadi-kabccommon.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libakonadi-kcal.so.?
-%attr(755,root,root) %{_libdir}/libakonadi-kcal.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libakonadi-xml.so.?
 %attr(755,root,root) %{_libdir}/libakonadi-xml.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libakonadi_next.so.?
-%attr(755,root,root) %{_libdir}/libakonadi_next.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkdepim-copy.so.?
 %attr(755,root,root) %{_libdir}/libkdepim-copy.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libmaildir.so.?
@@ -220,9 +211,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/akonadi/firstrun/defaultaddressbook
 %{_datadir}/apps/akonadi/firstrun/defaultcalendar
 %{_datadir}/kde4/services/akonadi.protocol
-%{_desktopdir}/kde4/akonadiconsole.desktop
-%dir %{_datadir}/apps/akonadiconsole
-%{_datadir}/apps/akonadiconsole/akonadiconsoleui.rc
 %{_datadir}/kde4/services/kcm_akonadi_resources.desktop
 %{_datadir}/kde4/services/kcm_akonadi.desktop
 %{_datadir}/kde4/services/kcm_akonadi_server.desktop
@@ -237,9 +225,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libakonadi-kcal.so
 %attr(755,root,root) %{_libdir}/libakonadi-xml.so
-%attr(755,root,root) %{_libdir}/libakonadi_next.so
 %attr(755,root,root) %{_libdir}/libkdepim-copy.so
 %attr(755,root,root) %{_libdir}/libmaildir.so
 %attr(755,root,root) %{_libdir}/libmbox.so
