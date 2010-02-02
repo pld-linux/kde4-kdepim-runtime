@@ -1,7 +1,6 @@
 
 %define		_state	unstable
 %define		qtver	4.6.0
-%define		snap	svn1040395
 
 %define		orgname	kdepim-runtime
 
