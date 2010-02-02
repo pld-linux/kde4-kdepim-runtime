@@ -34,7 +34,8 @@ BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
 BuildRequires:	pilot-link-devel >= 0.12.1
 BuildRequires:	qca-devel >= 2.0.0
-BuildRequires:	qt4-build
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
 BuildRequires:	soprano-devel >= 2.3.70
 BuildRequires:	shared-desktop-ontologies-devel >= 0.2
