@@ -1,0 +1,48 @@
+--- runtime/resources/pop3/accountdialog.cpp	(.../tags/KDE/4.4.0/kdepim)	(wersja 1089014)
++++ runtime/resources/pop3/accountdialog.cpp	(.../branches/KDE/4.4/kdepim)	(wersja 1089014)
+@@ -245,7 +245,6 @@
+     connect ( requestJob, SIGNAL(result(KJob*)),
+               this, SLOT(localFolderRequestJobFinished(KJob*)) );
+   }
+-  folderRequester->setEnabled( false );
+ 
+   if ( Settings::storePassword() ) {
+     mWallet = Wallet::openWallet( Wallet::NetworkWallet(), winId(),
+@@ -673,7 +672,6 @@
+ void AccountDialog::targetCollectionReceived( Akonadi::Collection::List collections )
+ {
+   folderRequester->setCollection( collections.first() );
+-  folderRequester->setEnabled( true );
+ }
+ 
+ void AccountDialog::localFolderRequestJobFinished( KJob *job )
+@@ -683,7 +681,6 @@
+     Q_ASSERT( targetCollection.isValid() );
+     folderRequester->setCollection( targetCollection );
+   }
+-  folderRequester->setEnabled( true );
+ }
+ 
+ #include "accountdialog.moc"
+--- runtime/resources/maildir/maildirresource.cpp	(.../tags/KDE/4.4.0/kdepim)	(wersja 1089014)
++++ runtime/resources/maildir/maildirresource.cpp	(.../branches/KDE/4.4/kdepim)	(wersja 1089014)
+@@ -346,7 +346,7 @@
+ {
+   kDebug() << collection << source << dest;
+   if ( collection.parentCollection() == Collection::root() ) {
+-    emit error( i18n( "Cannot move root maildir folder '%1'." ).arg( collection.remoteId() ) );
++    emit error( i18n( "Cannot move root maildir folder '%1'." ,collection.remoteId() ) );
+     changeProcessed();
+     return;
+   }
+--- runtime/resources/kabc/kresourceassistant.cpp	(.../tags/KDE/4.4.0/kdepim)	(wersja 1089014)
++++ runtime/resources/kabc/kresourceassistant.cpp	(.../branches/KDE/4.4/kdepim)	(wersja 1089014)
+@@ -370,7 +370,7 @@
+     d->mConfigWidget->loadSettings( d->mCreationWidget->mResource );
+   } else if ( item->widget() == d->mConfigWidget ) {
+     d->mConfigWidget->saveSettings( d->mCreationWidget->mResource );
+-
++    d->setReadOnly( d->mCreationWidget->mResource->readOnly() );
+     const QString resourceName = d->mCreationWidget->mResource->resourceName();
+     d->mFolderWidget->mName->setText( resourceName );
+   }
