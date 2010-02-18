@@ -16,28 +16,24 @@ Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version
 Patch100: %{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
-BuildRequires:	QtDesigner-devel >= %{qtver}
 BuildRequires:	QtNetwork-devel >= %{qtver}
+BuildRequires:	QtScript-devel >= %{qtver}
 BuildRequires:	QtSql-devel >= %{qtver}
 BuildRequires:	QtSvg-devel >= %{qtver}
 BuildRequires:	QtTest-devel >= %{qtver}
-BuildRequires:	QtWebKit-devel >= %{qtver}
 BuildRequires:	akonadi-devel >= 1.2.80
 BuildRequires:	automoc4 >= 0.9.88
 BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	cmake >= 2.8.0
-BuildRequires:	kde4-kdebase-workspace-devel >= %{version}
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
-BuildRequires:	pilot-link-devel >= 0.12.1
-BuildRequires:	qca-devel >= 2.0.0
 BuildRequires:	qt4-build >= %{qtver}
 BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.129
-BuildRequires:	soprano-devel >= 2.3.70
 BuildRequires:	shared-desktop-ontologies-devel >= 0.2
+BuildRequires:	soprano-devel >= 2.3.70
 BuildRequires:	strigi-devel >= 0.7.0
 BuildRequires:	zlib-devel
 BuildConflicts:	indexlib
