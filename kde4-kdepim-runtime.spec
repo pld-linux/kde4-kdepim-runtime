@@ -1,18 +1,18 @@
 
 %define		_state	stable
-%define		qtver	4.6.2
+%define		qtver	4.6.3
 
 %define		orgname	kdepim-runtime
 
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.4.4
+Version:	4.4.5
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	63dff808a6a6d4b4467fddd3bfbfc0da
+# Source0-md5:	a990c2ab0333ac5c2abf2867c661c86e
 Patch100:	%{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
