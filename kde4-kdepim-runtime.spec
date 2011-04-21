@@ -8,7 +8,7 @@ Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
 Version:	4.4.11.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/kdepim-%{version}/src/%{orgname}-%{version}.tar.bz2
@@ -125,7 +125,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
 %attr(755,root,root) %{_bindir}/akonadi_notes_resource
-%attr(755,root,root) %{_bindir}/akonadi_serializer_kcalcore.so
 %attr(755,root,root) %{_bindir}/akonadi_vcard_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/akonadi_pop3_resource
@@ -151,6 +150,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_mail.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_microblog.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_kcal.so
+%attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_kcalcore.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_bookmark.so
 %attr(755,root,root) %{_libdir}/kde4/kabc_akonadi.so
 %attr(755,root,root) %{_libdir}/kde4/kio_akonadi.so
