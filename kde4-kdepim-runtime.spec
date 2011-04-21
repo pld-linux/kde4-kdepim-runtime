@@ -1,18 +1,18 @@
 
 %define		_state	stable
-%define		qtver	4.7.1
+%define		qtver	4.7.2
 
 %define		orgname	kdepim-runtime
 
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.4.10
+Version:	4.4.11.1
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/kdepim-%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	be762d22a1391960a2770b590fb220b1
+# Source0-md5:	690db80588c0e1c0dc18de11a3fb3cb2
 Patch100:	%{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -125,6 +125,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
 %attr(755,root,root) %{_bindir}/akonadi_notes_resource
+%attr(755,root,root) %{_bindir}/akonadi_serializer_kcalcore.so
 %attr(755,root,root) %{_bindir}/akonadi_vcard_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/akonadi_pop3_resource
@@ -168,6 +169,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_contactgroup.desktop
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_mail.desktop
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_kcal.desktop
+%{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_bookmark.desktop
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
 %dir %{_datadir}/akonadi
