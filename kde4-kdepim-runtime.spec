@@ -7,12 +7,12 @@
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.6.1
+Version:	4.7.0
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/kdepim-%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	90a184721c6f95e7196988fd778026e8
+Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
+# Source0-md5:	328932493ca7a3bc2dc9c942620b5879
 Patch100:	%{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -102,7 +102,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	kde_htmldir=%{_kdedocdir}
 
-%find_lang %{name} --all-name --with-kde
+#%find_lang %{name} --all-name --with-kde
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -110,7 +110,8 @@ rm -rf $RPM_BUILD_ROOT
 %post	-p	/sbin/ldconfig
 %postun	-p	/sbin/ldconfig
 
-%files -f %{name}.lang
+%files
+# -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/accountwizard
 %attr(755,root,root) %{_bindir}/akonadi_calendarsearch_agent
@@ -226,12 +227,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/config/kres-migratorrc
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.Maildir.Settings.xml
 %{_datadir}/dbus-1/interfaces/org.kde.Akonadi.MixedMaildir.Settings.xml
+%{_datadir}/kde4/services/akonadi
 %{_datadir}/kde4/services/akonadi.protocol
 %{_datadir}/kde4/services/kcm_akonadi.desktop
 %{_datadir}/kde4/services/kcm_akonadi_resources.desktop
 %{_datadir}/kde4/services/kcm_akonadi_server.desktop
 %{_datadir}/kde4/services/kresources/kabc/akonadi.desktop
 %{_datadir}/kde4/services/kresources/kcal/akonadi.desktop
+%{_datadir}/kde4/servicetypes/davgroupwareprovider.desktop
 %{_datadir}/mime/packages/accountwizard-mime.xml
 %{_datadir}/mime/packages/kdepim-mime.xml
 %{_desktopdir}/kde4/akonaditray.desktop
