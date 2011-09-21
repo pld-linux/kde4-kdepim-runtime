@@ -1,295 +1,36 @@
---- runtime/plugins/akonadi_serializer_microblog.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/plugins/akonadi_serializer_microblog.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -17,6 +17,7 @@
- Name[it]=Serializzatore microblog
- Name[ja]=マイクロブログ用シリアライザ
- Name[km]=Microblog Serializer
-+Name[lt]=Mikrotinklaraščio įrašų įrašymas
- Name[lv]=Mikroblogu serializētājs
- Name[nb]=Mikroblogg-serialisator
- Name[nds]=Lüttdaagbook-Reegmoduul
-@@ -52,6 +53,7 @@
- Comment[it]=Un'estensione di Akonadi per la serializzazione di microblog
- Comment[ja]=マイクロブログのための Akonadi シリアライザプラグイン
- Comment[km]=កម្មវិធី​ជំនួយ​​កម្មវិធី​ដាក់​លេខ​សៀរៀល Akonadi សម្រាប់ Microblog
-+Comment[lt]=Akonadi serializatoriaus įskiepis mikrotinklaraščiams
- Comment[lv]=Akonadi Microblog serializēšanas spraudnis
- Comment[nb]=Et Akonadi programtillegg for serialisering av Microblog
- Comment[nds]=Akonadi-Inreegmoduul för Lüttdaagböker
---- runtime/agents/nepomuk_calendar_feeder/nepomukcalendarfeeder.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/agents/nepomuk_calendar_feeder/nepomukcalendarfeeder.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -13,6 +13,7 @@
- Name[it]=Fornitore di calendario per Nepomuk
- Name[ja]=Nepomuk カレンダーフィーダー
- Name[km]=កម្មវិធីមតិព័ត៌មាន​ប្រតិទិនរបស់ Nepomuk
-+Name[lt]=Nepomuk kalendoriaus šaltinis
- Name[lv]=Nepomuk kalendāru barotājs
- Name[nb]=Kalendersender til Nepomuk
- Name[nds]=Nepomuk-Kalenneringaav
-@@ -42,6 +43,7 @@
- Comment[it]=Estensione per inserire eventi, diari e cose da fare in Nepomuk
- Comment[ja]=Nepomuk にイベント、日記、To-Do を提供するエクステンション
- Comment[km]=ផ្នែក​បន្ថែម​ត្រូវ​ចុច​ព្រឹត្តិការណ៍ ទិនានុប្ប ទិនានុប្បវត្តិ និង​ការងារ​ត្រូវ​ធ្វើ​នៅ​ក្នុង Nepomuk
-+Comment[lt]=Praplėtimas skirtas kontaktų, žurnalo įrašų ir užduočių perdavimui į Nepomuk
- Comment[lv]=Paplašinājums, kas iesūta dienasgrāmatas un darbus Nepomuk
- Comment[nb]=Utvidelse som sender hendelser, dagboksnotater og gjøremål inn til Nepomuk
- Comment[nds]=Verwiedern, mit de sik Begeefnissen, Daagböker un Opgaven na Nepomuk överdregen laat
---- runtime/agents/maildispatcher/maildispatcheragent.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/agents/maildispatcher/maildispatcheragent.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -13,6 +13,7 @@
- Name[it]=Agente per la consegna della posta
- Name[ja]=メール送信エージェント
- Name[km]=ភ្នាក់ងារ​កម្មវិធី​បញ្ជូន​សំបុត្រ
-+Name[lt]=Laiškų skirstytuvė
- Name[lv]=Pasta nosūtīšanas aģents
- Name[nb]=Agent for e-postsending
- Name[nds]=Nettpostverdeel-Hölper
---- runtime/kresources/kabc/akonadi.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/kresources/kabc/akonadi.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -45,7 +45,7 @@
- Comment[de]=Ermöglicht den Zugriff auf Kontakte, die in Akonadi-Adressbuch-Ordnern gespeichert sind.
- Comment[el]=Προσφέρει πρόσβαση σε επαφές αποθηκευμένες σε φακέλους βιβλίων διευθύνσεων του Akonadi
- Comment[en_GB]=Provides access to contacts stored in Akonadi address book folders
--Comment[es]=Provee acceso a los contactos almacenados en carpetas de la libreta de direcciones de Akonadi
-+Comment[es]=Proporciona acceso a los contactos almacenados en carpetas de la libreta de direcciones de Akonadi
- Comment[et]=Võimaldab kasutada Akonadi aadressiraamatukaustadesse salvestatud kontakte
- Comment[fr]=Fourni l'accès aux contacts stockés dans les dossiers du carnet d'adresses Akonadi
- Comment[gl]=Fornece acceso aos contactos almacenados nos cartafoles de caderno de enderezos do Akonadi
---- runtime/kresources/kcal/akonadi.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/kresources/kcal/akonadi.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -46,7 +46,7 @@
- Comment[de]=Ermöglicht den Zugriff auf Kalender, die in Akonadi-Ordnern gespeichert sind.
- Comment[el]=Προσφέρει πρόσβαση σε ημερολόγια αποθηκευμένα σε φακέλους ημερολογίου του Akonadi
- Comment[en_GB]=Provides access to calendars stored in Akonadi calendar folders
--Comment[es]=Provee acceso a calendarios almacenados en carpetas de calendario de Akonadi
-+Comment[es]=Proporciona acceso a calendarios almacenados en carpetas de calendario de Akonadi
- Comment[et]=Võimaldab kasutada Akonadi kalendrikaustadesse salvestatud kalendreid
- Comment[fr]=Fourni l'accès aux calendriers stockés dans les dossiers de calendrier Akonadi
- Comment[gl]=Permite acceder aos calendarios almacenados nos cartafoles de calendario do Akonadi
---- runtime/migration/kaddressbook/kaddressbookmigrator.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/migration/kaddressbook/kaddressbookmigrator.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -13,6 +13,7 @@
- Name[it]=kaddressbookmigrator
- Name[ja]=アドレス帳移行ツール
- Name[km]=kaddressbookmigrator
-+Name[lt]=kaddressbookmigrator
- Name[lv]=kaddressbookmigrator
- Name[nb]=kaddressbookmigrator
- Name[nds]=KAdressbook-Överföhren
-@@ -44,6 +45,7 @@
- Comment[it]=Strumento per migrare in Akonadi la rubrica del vecchio tipo kresource.
- Comment[ja]=KDE の以前のリソースによるアドレス帳を Akonadi へ移行するツール
- Comment[km]=ឧបករណ៍​ត្រូវ​ប្ដូរ​ kresource ចាស់​ដែល​មាន​មូលដ្ឋាន​លើ​សៀវភៅ​អាសយដ្ឋាន​ទៅ​កាន់ Akonadi ។
-+Comment[lt]=Įrankis, skirtas senų „kresource“ tipo adresų knygučių migravimui į Akonadi
- Comment[lv]=Rīks veco kresource balstīto adrešu grāmatu migrēšanai uz Akonadi.
- Comment[nb]=Verktøy for å overføre den gamle kresource-baserte adresseboka til Akonadi.
- Comment[nds]=Programm för't Överföhren vun dat ole, op KRessource opbuut Adressbook na Akonadi
---- runtime/kcm/kcm_akonadi.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/kcm/kcm_akonadi.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -30,6 +30,7 @@
- Name[ja]=Akonadi の設定
- Name[km]=ការ​កំណត់​រចនាសម្ព័ន្ធ Akonadi
- Name[ko]=Akonadi 설정
-+Name[lt]=Akonadi konfigūravimas
- Name[lv]=Akonadi konfigurācija
- Name[nb]=Akonadi-oppsett
- Name[nds]=Akonadi-Instellen
---- runtime/resources/pop3/pop3resource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/pop3/pop3resource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -14,6 +14,7 @@
- Name[it]=POP3
- Name[ja]=POP3
- Name[km]=POP3
-+Name[lt]=POP3
- Name[lv]=POP3
- Name[nb]=POP3
- Name[nds]=POP3
-@@ -45,6 +46,7 @@
- Comment[it]=Scarica messaggi da un server POP3
- Comment[ja]=POP3 サーバからメールを取得します
- Comment[km]=ទៅ​យក​សំបុត្រ​ពី​ម៉ាស៊ីន​បម្រើ POP3
-+Comment[lt]=Atsiunčia paštą iš POP3 serverio
- Comment[lv]=Ielādē pastu no POP3 servera
- Comment[nb]=Henter e-post fra en POP3-tjener
- Comment[nds]=Nettpost vun en POP3-Server halen
---- runtime/resources/imap/imapresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/imap/imapresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -14,6 +14,7 @@
- Name[it]=Server di posta IMAP
- Name[ja]=IMAP メールサーバ
- Name[km]=ម៉ាស៊ីន​បម្រើ​អ៊ីមែល IMAP
-+Name[lt]=IMAP pašto serveris
- Name[lv]=IMAP e-pasta serveris
- Name[nb]=IMAP E-post-tjener
- Name[nds]=IMAP-Nettpostserver
-@@ -46,6 +47,7 @@
- Comment[it]=Si collega ad un server di posta IMAP.
- Comment[ja]=IMAP のメールサーバに接続します。
- Comment[km]=តភ្ជាប់​ទៅ​កាន់​ម៉ាស៊ីន​បម្រើអ៊ីមែល IMAP ។
-+Comment[lt]=Prisijungia prie IMAP e. pašto serverio.
- Comment[lv]=Pieslēdzas IMAP e-pasta serverim.
- Comment[nb]=Kobler til en IMAP e-posttjener.
- Comment[nds]=Stellt en Verbinnen na en IMAP-Nettpostserver op.
---- runtime/resources/birthdays/birthdaysresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/birthdays/birthdaysresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -16,6 +16,7 @@
- Name[it]=Compleanni e anniversari
- Name[ja]=誕生日と記念日
- Name[km]=បុណ្យ​ខួប និង​បុណ្យ​ខួប​កំណើត
-+Name[lt]=Gimtadieniai ir sukaktys
- Name[lv]=Dzimšanas un svētku dienas
- Name[nb]=Vis fødselsdager og bryllupsdager
- Name[nds]=Geboorts- un Johrdaag
-@@ -42,7 +43,7 @@
- Comment[de]=Ermöglicht den Zugriff auf Geburtstage und Jahrestage von Kontakten aus dem KDE-Adressbuch in Form von Kalendereinträgen.
- Comment[el]=Προσφέρει πρόσβαση σε γενέθλια και επετείους επαφών του βιβλίου διευθύνσεών σας ως γεγονότα ημερολογίου
- Comment[en_GB]=Provides access to birthday and anniversary dates of contacts in your address book as calendar events
--Comment[es]=Provee acceso a las fechas de cumpleaños  y aniversarios de los contactos en la libreta de direcciones como eventos de calendario
-+Comment[es]=Proporciona acceso a las fechas de cumpleaños  y aniversarios de los contactos en la libreta de direcciones como eventos de calendario
- Comment[et]=Võimaldab kasutada KDE aadressiraamatusse kalendrisündmustena salvestatud kontaktide sünni- ja aastapäevi
- Comment[fi]=Noutaa yhteystietojesi syntymä- ja vuosipäivät osoitekirjastasi kalenteritapahtumina
- Comment[fr]=Fourni l'accès aux dates d'anniversaire et de fête des contacts du carnet d'adresses KDE comme des évènements du calendrier
-@@ -51,6 +52,7 @@
- Comment[it]=Consente l'accesso alle date di nascita ed agli anniversari dei contatti della rubrica di KDE come eventi di calendario.
- Comment[ja]=アドレス帳にカレンダーイベントとして保存されている誕生日と記念日へのアクセスを提供します
- Comment[km]=ផ្ដល់​សិទ្ធិ​ចូល​ដំណើរការ​ទៅកាន់​កាលបរិច្ឆេទ​ថ្ងៃ​ខួប​កំណើត​នៃ​ទំនាក់ទំនង​នៅ​ក្នុង​សៀវភៅ​អាសយដ្ឋាន KDE ជា​ព្រឹត្តិការណ៍​ប្រតិទិន
-+Comment[lt]=Suteikia prieigą prie kontaktų gimimo dienų ir sukakčių datų, įrašytų adresų knygelėje, kaip prie kalendoriaus įvykių
- Comment[lv]=Nodrošina piekļuvi KDE adrešu grāmatas kontaktu dzimšanas dienu datumiem kā kalendāra notikumiem
- Comment[nb]=Gir tilgang til bursdager og bryllupsdager for kontakter i adresseboka, som kalenderhendelser
- Comment[nds]=Stellt Togriep op Geboorts- un Johrdaag vun Kontakten binnen Dien Adressbook as Kalenner-Begeevnissen praat
---- runtime/resources/kolabproxy/kolabproxyresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/kolabproxy/kolabproxyresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -6,13 +6,14 @@
- Name[de]=Kolab Groupware-Server
- Name[el]=Εξυπηρετητής Groupware Kolab
- Name[en_GB]=Kolab Groupware Server
--Name[es]=Servidor de Groupware Kolab
-+Name[es]=Servidor de trabajo en grupo Kolab
- Name[et]=Kolabi grupitöö server
- Name[fr]=Serveur de travail collaboratif Kolab
- Name[gl]=Servidor de traballo en grupo Kolab
- Name[it]=Server di groupware Kolab
- Name[ja]=Kolab グループウェアサーバ
- Name[km]=ម៉ាស៊ីន​បម្រើ Kolab Groupware
-+Name[lt]=Kolab grupinio darbo serveris
- Name[lv]=Kolab grupdarba serveris
- Name[nb]=Kolab groupware-tjener
- Name[nds]=Kolab-Arbeitkoppel-Server
-@@ -43,6 +44,7 @@
- Comment[it]=Fornisce l'accesso a cartelle di groupware Kolab su un server IMAP (gli account IMAP devono essere impostati separatamente).
- Comment[ja]=IMAP サーバの Kolab グループウェアフォルダへのアクセスを提供します (IMAP アカウントは別に設定する必要があります)。
- Comment[km]=ផ្ដល់​ការ​ចូលដំណើរ​ការ​​ទៅកាន់​ថត Kolab groupware នៅ​លើ​ម៉ាស៊ីន​បម្រើ IMAP (គណនី IMAP តម្រូវ​ឲ្យ​ដំឡើង​ដោយ​ឡែក) ។
-+Comment[lt]=Suteikia prieigą prie Kolab grupinio darbo aplankų IMAP serveryje (IMAP aplankai turi būti atskirai nustatyti).
- Comment[lv]=Nodrošina piekļuvi Kolab grupdarba mapēm uz IMAP servera (IMAP kontus jākonfigurē atsevišķi).
- Comment[nb]=Gir tilgang til Kolab-mapper på en IMAP-tjener (IMAP-kontoer må settes opp separat).
- Comment[nds]=Stellt Togriep op Kolab-Arbeitkoppel-Ornern op en IMAP-Server praat (IMAP-Kontos mööt enkelt inricht warrn).
---- runtime/resources/kabc/kabcresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/kabc/kabcresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -17,6 +17,7 @@
- Name[it]=Rubrica indirizzi di KDE (tradizionale)
- Name[ja]=KDE アドレス帳 (従来のタイプ)
- Name[km]=សៀវភៅ​អាសយដ្ឋាន KDE (បុរាណ)
-+Name[lt]=KDE adresų knygelė (tradicinis šaltinis)
- Name[lv]=KDE adrešu grāmata (tradicionālā)
- Name[nb]=KDE-adressebok (tradisjonell)
- Name[nds]=KDE-Adressbook (normaal)
-@@ -53,6 +54,7 @@
- Comment[it]=Carica dati da una tradizionale risorsa rubrica di KDE
- Comment[ja]=従来の KDE アドレス帳リソースからデータを読み込みます
- Comment[km]=ផ្ទុក​ទិន្នន័យ​ពី​ធនធាន​សៀវភៅ​អាសយដ្ឋាន KDE បុរាណ
-+Comment[lt]=Įkelia duomenis iš tradicinės KDE adresų knygelės
- Comment[lv]=Ielādē datus no tradicionālā KDE adrešu grāmatas resursa
- Comment[nb]=Laster data fra en tradisjonell KDE adressebok-ressurs
- Comment[nds]=Laadt Daten ut en normaal KDE-Adressbookressource
---- runtime/resources/localbookmarks/localbookmarksresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/localbookmarks/localbookmarksresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -17,6 +17,7 @@
- Name[it]=Segnalibri locali
- Name[ja]=ローカルブックマーク
- Name[km]=ចំណាំ​មូលដ្ឋាន
-+Name[lt]=Vietinės žymelės
- Name[lv]=Lokālās grāmatzīmes
- Name[nb]=Lokale bokmerker
- Name[nds]=Lokaal Leestekens
---- runtime/resources/mbox/mboxresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/mbox/mboxresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -16,6 +16,7 @@
- Name[it]=Mbox
- Name[ja]=Mbox
- Name[km]=Mbox
-+Name[lt]=Mbox
- Name[lv]=Mbox
- Name[nb]=Mbox
- Name[nds]=MBox
-@@ -50,6 +51,7 @@
- Comment[it]=Carica dati da una cartella locale mbox
- Comment[ja]=ローカルの mbox ファイルからデータを読み込みます
- Comment[km]=ផ្ទុក​ទិន្នន័យ​ពី​ឯកសារ mbox មូលដ្ឋាន
-+Comment[lt]=Įkelia duomenis iš vietinio mbox failo
- Comment[lv]=Ielādē datus no lokālā mbox faila
- Comment[nb]=Laster data fra en lokal mbox-fil
- Comment[nds]=Laadt Daten ut en lokaal Postfach (MBox-Datei)
---- runtime/resources/ical/notes/notesresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/ical/notes/notesresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -81,6 +81,7 @@
- Comment[it]=Carica dati da un file contenente note
- Comment[ja]=メモファイルからデータを読み込みます
- Comment[km]=ផ្ទុក​ទិន្នន័យ​ពី​ឯកសារ​ចំណាំ
-+Comment[lt]=Įkelia duomenis iš lipnių lapelių failų
- Comment[lv]=Ielādē datus no piezīmju faila
- Comment[nb]=Laster data fra en notat-fil
- Comment[nds]=Laadt Daten ut en Notizen-Datei
---- runtime/resources/mailtransport_dummy/mtdummyresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/mailtransport_dummy/mtdummyresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -12,6 +12,7 @@
- Name[gl]=Recurso de transporte de correo parvo
- Name[it]=Risorsa MailTransport fittizia
- Name[km]=ធនធាន MailTransport សម្រាប់​អ្នក​មិន​ចេះ
-+Name[lt]=Fiktyvus pašto transporto resursas
- Name[lv]=MailTransport resursa imitācija
- Name[nb]=Attrapp-ressurs for e-posttransport
- Name[nds]=Platzholl-Nettpostöverdreegmetoden-Ressource
-@@ -38,6 +39,7 @@
- Comment[gl]=Recurso parvo que aporta a interface de transporte de correo
- Comment[it]=Risorsa fittizia che implementa l'interfaccia di trasporto della posta
- Comment[km]=ចំណុច​ប្រទាក់​បញ្ជូន​សំបុត្រ​ដោយ​អនុវត្ត​ធនធាន​ពី​ដំបូង
-+Comment[lt]=Fiktyvus resursas, įgyvendinantis pašto transporto sąsają
- Comment[lv]=Resursa imitācija, kas realizē pasta transporta saskarni
- Comment[nb]=Attrappressurs som implementerer grensesnitt for e-posttransport
- Comment[nds]=Platzhollressource mit inbuut Nettpostöverdreegmetood-Koppelsteed
---- runtime/resources/microblog/microblog.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/microblog/microblog.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -17,6 +17,7 @@
- Name[it]=Microblog (Twitter e Identi.ca)
- Name[ja]=マイクロブログ (Twitter や Identi.ca)
- Name[km]=Microblog (Twitter និង Identi.ca)
-+Name[lt]=Mikrotinklaraštis (Twitter ir Identi.ca)
- Name[lv]=Mikroblogi (Twitter un Identi.ca)
- Name[nb]=Mikroblogging (Twitter og Identi.ca)
- Name[nds]=Lüttdaagbook (Twitter un Identi.ca)
-@@ -52,6 +53,7 @@
- Comment[it]=Mostra i dati di microblog da Twitter o Identi.ca.
- Comment[ja]=Twitter や Identi.ca からマイクロブログを表示します。
- Comment[km]=បង្ហាញ​ទិន្នន័យ microblog របស់​អ្នក​ពី Twitter ឬ Identi.ca ។
-+Comment[lt]=Rodo mikrotinklaraščio duomenis iš Twitter arba Identi.ca.
- Comment[lv]=Rāda jūsu mikrobliogu datus no Twitter un Identi.ca.
- Comment[nb]=Viser dine mikrobloggdata fra Twitter eller Identi.ca
- Comment[nds]=Wiest Dien Lüttdaagbook-Daten ut Twitter un Identi.ca.
---- runtime/resources/contacts/contactsresource.desktop	(.../tags/KDE/4.4.1/kdepim)	(wersja 1104128)
-+++ runtime/resources/contacts/contactsresource.desktop	(.../branches/KDE/4.4/kdepim)	(wersja 1104128)
-@@ -14,6 +14,7 @@
- Name[it]=Contatti personali
- Name[ja]=個人の連絡先
- Name[km]=ទំនាក់ទំនង​ផ្ទាល់ខ្លួន
-+Name[lt]=Asmeniniai kontaktai
- Name[lv]=Personīgie kontakti
- Name[nb]=Personlige kontakter
- Name[nds]=Persöönlich Kontakten
-@@ -44,6 +45,7 @@
- Comment[it]=La rubrica con i contatti personali
- Comment[ja]=個人の連絡先を含むアドレス帳
- Comment[km]=សៀវភៅ​អាសយដ្ឋាន​ដែលមាន​ទំនាក់ទំនង​ផ្ទាល់ខ្លួន
-+Comment[lt]=Adresų knygelė su asmeniniais kontaktais
- Comment[lv]=Personīgo kontaktu adrešu grāmata
- Comment[nb]=Adresseboka med personlige kontakter.
- Comment[nds]=Dat Adressbook mit persöönlich Kontakten
+From ccd67f3e65c9ffe32858ca521aa1e56a42b026af Mon Sep 17 00:00:00 2001
+From: Volker Krause <vkrause@kde.org>
+Date: Tue, 20 Sep 2011 10:12:40 +0200
+Subject: [PATCH] Ignore items with empty remote ids here.
+
+Items with empty remote id are those not yet stored by the resource,
+ie. we still have pending change replays for those. So, if we do a sync
+during that period (which could happen since the introduction of the
+file system watcher), we would remove a random one of those (only one
+since the map would only contain one without a remote id). This mostly
+affects the POP3 usage pattern.
+(cherry picked from commit f814b46a799ea8418ae17cf77d44da473124d12d)
+---
+ resources/maildir/retrieveitemsjob.cpp |    6 ++++--
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/resources/maildir/retrieveitemsjob.cpp b/resources/maildir/retrieveitemsjob.cpp
+index 7253f7e..f0273ef 100644
+--- a/resources/maildir/retrieveitemsjob.cpp
++++ b/resources/maildir/retrieveitemsjob.cpp
+@@ -57,8 +57,10 @@ void RetrieveItemsJob::localListDone ( KJob* job )
+ 
+   const Akonadi::Item::List items = qobject_cast<Akonadi::ItemFetchJob*>( job )->items();
+   m_localItems.reserve( items.size() );
+-  foreach ( const Akonadi::Item &item, items )
+-    m_localItems.insert( item.remoteId(), item );
++  foreach ( const Akonadi::Item &item, items ) {
++    if ( !item.remoteId().isEmpty() )
++      m_localItems.insert( item.remoteId(), item );
++  }
+ 
+   const QStringList entryList = m_maildir.entryList();
+   qint64 previousMtime = m_collection.remoteRevision().toLongLong();
+-- 
+1.7.1
+
