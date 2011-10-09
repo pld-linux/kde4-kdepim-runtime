@@ -1,36 +1,75 @@
-From ccd67f3e65c9ffe32858ca521aa1e56a42b026af Mon Sep 17 00:00:00 2001
-From: Volker Krause <vkrause@kde.org>
-Date: Tue, 20 Sep 2011 10:12:40 +0200
-Subject: [PATCH] Ignore items with empty remote ids here.
+commit 6bdc6290632be5fc6c103064463d7421b5e3b60d
+Author: Montel Laurent <montel@kde.org>
+Date:   Fri Oct 7 17:14:06 2011 +0200
 
-Items with empty remote id are those not yet stored by the resource,
-ie. we still have pending change replays for those. So, if we do a sync
-during that period (which could happen since the introduction of the
-file system watcher), we would remove a random one of those (only one
-since the map would only contain one without a remote id). This mostly
-affects the POP3 usage pattern.
-(cherry picked from commit f814b46a799ea8418ae17cf77d44da473124d12d)
----
- resources/maildir/retrieveitemsjob.cpp |    6 ++++--
- 1 files changed, 4 insertions(+), 2 deletions(-)
+    Fix Bug 283467 - Kmail has duplicated folders after migration from previous version.
+    
+    By default in config we don't translate config name.
+    We use "inbox" "sent-mail" etc.
+    
+    BUG: 283467
+    FIXED-IN: 4.7.3
 
-diff --git a/resources/maildir/retrieveitemsjob.cpp b/resources/maildir/retrieveitemsjob.cpp
-index 7253f7e..f0273ef 100644
---- a/resources/maildir/retrieveitemsjob.cpp
-+++ b/resources/maildir/retrieveitemsjob.cpp
-@@ -57,8 +57,10 @@ void RetrieveItemsJob::localListDone ( KJob* job )
+diff --git a/migration/kmail/localfolderscollectionmigrator.cpp b/migration/kmail/localfolderscollectionmigrator.cpp
+index 3edc59e..ea9f163 100644
+--- a/migration/kmail/localfolderscollectionmigrator.cpp
++++ b/migration/kmail/localfolderscollectionmigrator.cpp
+@@ -64,23 +64,41 @@ void LocalFoldersCollectionMigrator::setKMailConfig( const KSharedConfigPtr &con
  
-   const Akonadi::Item::List items = qobject_cast<Akonadi::ItemFetchJob*>( job )->items();
-   m_localItems.reserve( items.size() );
--  foreach ( const Akonadi::Item &item, items )
--    m_localItems.insert( item.remoteId(), item );
-+  foreach ( const Akonadi::Item &item, items ) {
-+    if ( !item.remoteId().isEmpty() )
-+      m_localItems.insert( item.remoteId(), item );
-+  }
+   const KConfigGroup group( config, QLatin1String( "General" ) );
  
-   const QStringList entryList = m_maildir.entryList();
-   qint64 previousMtime = m_collection.remoteRevision().toLongLong();
--- 
-1.7.1
-
+-  QString name = group.readEntry( QLatin1String( "inboxFolder" ), i18nc( "mail folder name for role inbox",  "inbox" ) );
+-  d->mSystemFolders.insert( name, SpecialMailCollections::Inbox );
+-
+-  name = group.readEntry( QLatin1String( "outboxFolder" ), i18nc( "mail folder name for role outbox",  "outbox" ) );
+-  d->mSystemFolders.insert( name, SpecialMailCollections::Outbox );
+-
+-  name = group.readEntry( QLatin1String( "sentFolder" ), i18nc( "mail folder name for role sent-mail",  "sent-mail" ) );
+-  d->mSystemFolders.insert( name, SpecialMailCollections::SentMail );
+-
+-  name = group.readEntry( QLatin1String( "trashFolder" ), i18nc( "mail folder name for role trash",  "trash" ) );
+-  d->mSystemFolders.insert( name, SpecialMailCollections::Trash );
+-
+-  name = group.readEntry( QLatin1String( "draftsFolder" ), i18nc( "mail folder name for role drafts",  "drafts" ) );
+-  d->mSystemFolders.insert( name, SpecialMailCollections::Drafts );
+-
+-  name = group.readEntry( QLatin1String( "templatesFolder" ), i18nc( "mail folder name for role templates",  "templates" ) );
+-  d->mSystemFolders.insert( name, SpecialMailCollections::Templates );
++  if ( group.hasKey( QLatin1String( "inboxFolder" ) ) ) {
++    const QString name = group.readEntry( QLatin1String( "inboxFolder" ), i18nc( "mail folder name for role inbox",  "inbox" ) );
++    d->mSystemFolders.insert( name, SpecialMailCollections::Inbox );
++  } else 
++    d->mSystemFolders.insert( QLatin1String( "inbox" ), SpecialMailCollections::Inbox );
++
++  if ( group.hasKey( QLatin1String( "outboxFolder" ) ) ) {
++    const QString name = group.readEntry( QLatin1String( "outboxFolder" ), i18nc( "mail folder name for role outbox",  "outbox" ) );
++    d->mSystemFolders.insert( name, SpecialMailCollections::Outbox );
++  } else 
++    d->mSystemFolders.insert( QLatin1String( "outbox" ), SpecialMailCollections::Outbox );
++
++  if ( group.hasKey( QLatin1String( "sentFolder" ) ) ) {
++    const QString name = group.readEntry( QLatin1String( "sentFolder" ), i18nc( "mail folder name for role sent-mail",  "sent-mail" ) );
++    d->mSystemFolders.insert( name, SpecialMailCollections::SentMail );
++  } else 
++    d->mSystemFolders.insert( QLatin1String( "sent-mail" ), SpecialMailCollections::SentMail );
++
++  if ( group.hasKey( QLatin1String( "trashFolder" ) ) ) {
++    const QString name = group.readEntry( QLatin1String( "trashFolder" ), i18nc( "mail folder name for role trash",  "trash" ) );
++    d->mSystemFolders.insert( name, SpecialMailCollections::Trash );
++  } else 
++    d->mSystemFolders.insert( QLatin1String( "trash" ), SpecialMailCollections::Trash );
++
++  if ( group.hasKey( QLatin1String( "draftsFolder" ) ) ) {
++    const QString name = group.readEntry( QLatin1String( "draftsFolder" ), i18nc( "mail folder name for role drafts",  "drafts" ) );
++    d->mSystemFolders.insert( name, SpecialMailCollections::Drafts );
++  } else 
++    d->mSystemFolders.insert( QLatin1String( "drafts" ), SpecialMailCollections::Drafts );
++
++  if ( group.hasKey( QLatin1String( "templatesFolder" ) ) ) {
++    const QString name = group.readEntry( QLatin1String( "templatesFolder" ), i18nc( "mail folder name for role templates",  "templates" ) );
++    d->mSystemFolders.insert( name, SpecialMailCollections::Templates );
++  } else
++    d->mSystemFolders.insert( QLatin1String( "templates" ), SpecialMailCollections::Templates );
+ }
+ 
+ void LocalFoldersCollectionMigrator::migrateCollection( const Collection &collection, const QString &folderId )
