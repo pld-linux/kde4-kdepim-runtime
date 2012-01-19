@@ -1,18 +1,18 @@
 
 %define		_state	stable
-%define		qtver	4.7.4
+%define		qtver	4.8.0
 
 %define		orgname	kdepim-runtime
 
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.7.4
+Version:	4.8.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.bz2
-# Source0-md5:	fff04e1be1ffb8047fc8c5a395b79efb
+# Source0-md5:	3a45035530a440652ecf69548334efbc
 Patch100:	%{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -126,8 +126,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_localbookmarks_resource
 %attr(755,root,root) %{_bindir}/akonadi_maildispatcher_agent
 %attr(755,root,root) %{_bindir}/akonadi_mailtransport_dummy_resource
-%attr(755,root,root) %{_bindir}/akonadi_nepomuk_calendar_feeder
-%attr(755,root,root) %{_bindir}/akonadi_nepomuk_contact_feeder
+%attr(755,root,root) %{_bindir}/akonadi_nepomuk_feeder
 %attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
@@ -151,6 +150,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libakonadi-filestore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkmindexreader.so.?
 %attr(755,root,root) %{_libdir}/libkmindexreader.so.*.*.*
+%attr(755,root,root) %{_libdir}/libnepomukdatamanagement-copy.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_addressee.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_contactgroup.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_mail.so
@@ -167,6 +167,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/akonadi_mbox_resource.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_notes_resource.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_vcard_resource.so
+%attr(755,root,root) %{_libdir}/kde4/akonadi_kalarm_dir_resource.so
+%attr(755,root,root) %{_libdir}/kde4/akonadi_kalarm_resource.so
+%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_calendar_feeder.so
+%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_contact_feeder.so
+%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_email_feeder.so
+%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_note_feeder.so
+%attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_kalarm.so
 %attr(755,root,root) %{_libdir}/kde4/kabc_akonadi.so
 %attr(755,root,root) %{_libdir}/kde4/kio_akonadi.so
 %attr(755,root,root) %{_libdir}/kde4/kcm_akonadi_resources.so
@@ -187,6 +194,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_kcalcore.desktop
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_bookmark.desktop
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
+%{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_kalarm.desktop
 %dir %{_datadir}/akonadi
 %dir %{_datadir}/akonadi/agents
 %{_datadir}/akonadi/agents/akonotesresource.desktop
@@ -209,8 +217,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/microblog.desktop
 %{_datadir}/akonadi/agents/mixedmaildirresource.desktop
 %{_datadir}/akonadi/agents/mtdummyresource.desktop
-%{_datadir}/akonadi/agents/nepomukcalendarfeeder.desktop
-%{_datadir}/akonadi/agents/nepomukcontactfeeder.desktop
 %{_datadir}/akonadi/agents/nepomuktagresource.desktop
 %{_datadir}/akonadi/agents/nntpresource.desktop
 %{_datadir}/akonadi/agents/notesresource.desktop
@@ -218,6 +224,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/pop3resource.desktop
 %{_datadir}/akonadi/agents/vcarddirresource.desktop
 %{_datadir}/akonadi/agents/vcardresource.desktop
+%{_datadir}/akonadi/agents/akonadinepomukfeederagent.desktop
+%{_datadir}/akonadi/agents/kalarmdirresource.desktop
+%{_datadir}/akonadi/agents/kalarmresource.desktop
 %{_desktopdir}/kde4/accountwizard.desktop
 %{_datadir}/apps/akonadi/accountwizard
 %{_datadir}/apps/akonadi/firstrun
@@ -234,9 +243,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kcm_akonadi_server.desktop
 %{_datadir}/kde4/services/kresources/kabc/akonadi.desktop
 %{_datadir}/kde4/services/kresources/kcal/akonadi.desktop
+%{_datadir}/kde4/services/nepomukcalendarfeeder.desktop
+%{_datadir}/kde4/services/nepomukcontactfeeder.desktop
+%{_datadir}/kde4/services/nepomukmailfeeder.desktop
+%{_datadir}/kde4/services/nepomuknotefeeder.desktop
+%{_datadir}/kde4/servicetypes/akonadinepomukfeeder.desktop
 %{_datadir}/kde4/servicetypes/davgroupwareprovider.desktop
 %{_datadir}/mime/packages/accountwizard-mime.xml
 %{_datadir}/mime/packages/kdepim-mime.xml
+%{_datadir}/ontology/kde/aneo.ontology
+%{_datadir}/ontology/kde/aneo.trig
 %{_desktopdir}/kde4/akonaditray.desktop
 %{_iconsdir}/*/*/apps/kolab.png
 %{_iconsdir}/*/*/apps/ox.png
