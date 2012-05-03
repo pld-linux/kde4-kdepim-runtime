@@ -1,18 +1,18 @@
 
 %define		_state	stable
-%define		qtver	4.8.0
+%define		qtver	4.8.1
 
 %define		orgname	kdepim-runtime
 
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.8.2
-Release:	2
+Version:	4.8.3
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	ac3b7c787813ff0d1b47b6ec9d888773
+# Source0-md5:	3aab404f1a51f5f77581ddc93895dd9d
 Patch100:	%{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -150,7 +150,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libakonadi-filestore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkmindexreader.so.?
 %attr(755,root,root) %{_libdir}/libkmindexreader.so.*.*.*
-%attr(755,root,root) %{_libdir}/libnepomukdatamanagement-copy.so
+%attr(755,root,root) %{_libdir}/libkdepim-runtime-dms-copy.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_addressee.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_contactgroup.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_mail.so
