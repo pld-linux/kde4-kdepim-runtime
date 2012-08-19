@@ -7,7 +7,7 @@ Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
 Version:	4.9.0
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
@@ -29,6 +29,7 @@ BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
 BuildRequires:	libkgapi-devel
 BuildRequires:	libkolab-devel
+BuildRequires:	libkolabxml-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
 BuildRequires:	qt4-build >= %{qtver}
@@ -115,8 +116,9 @@ rm -rf $RPM_BUILD_ROOT
 # -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/accountwizard
-%attr(755,root,root) %{_bindir}/akonadi_calendarsearch_agent
 %attr(755,root,root) %{_bindir}/akonadi_davgroupware_resource
+%attr(755,root,root) %{_bindir}/akonadi_googlecalendar_resource
+%attr(755,root,root) %{_bindir}/akonadi_googlecontacts_resource
 %attr(755,root,root) %{_bindir}/akonadi_invitations_agent
 %attr(755,root,root) %{_bindir}/akonadi_kdeaccounts_resource
 %attr(755,root,root) %{_bindir}/akonadi_mixedmaildir_resource
@@ -200,9 +202,10 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/akonadi/agents
 %{_datadir}/akonadi/agents/akonotesresource.desktop
 %{_datadir}/akonadi/agents/birthdaysresource.desktop
-%{_datadir}/akonadi/agents/calendarsearchagent.desktop
 %{_datadir}/akonadi/agents/contactsresource.desktop
 %{_datadir}/akonadi/agents/davgroupwareresource.desktop
+%{_datadir}/akonadi/agents/googlecalendarresource.desktop
+%{_datadir}/akonadi/agents/googlecontactsresource.desktop
 %{_datadir}/akonadi/agents/icalresource.desktop
 %{_datadir}/akonadi/agents/imapresource.desktop
 %{_datadir}/akonadi/agents/invitationsagent.desktop
@@ -254,6 +257,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/mime/packages/kdepim-mime.xml
 %{_datadir}/ontology/kde/aneo.ontology
 %{_datadir}/ontology/kde/aneo.trig
+%{_libdir}/kde4/imports/org/kde/*.qml
+%{_libdir}/kde4/imports/org/kde/*.png
+%{_libdir}/kde4/imports/org/kde/qmldir
+%attr(755,root,root) %{_libdir}/kde4/imports/org/kde/libkdeqmlplugin.so
+%dir %{_libdir}/kde4/imports/org/kde/akonadi
+%{_libdir}/kde4/imports/org/kde/akonadi/*.qml
+%{_libdir}/kde4/imports/org/kde/akonadi/*.png
+%{_libdir}/kde4/imports/org/kde/akonadi/qmldir
 %{_desktopdir}/kde4/akonaditray.desktop
 %{_iconsdir}/*/*/apps/kolab.png
 %{_iconsdir}/*/*/apps/ox.png
