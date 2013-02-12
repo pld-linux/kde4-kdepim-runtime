@@ -1,3 +1,9 @@
+#
+# TODO:
+#/usr/bin/nepomukpimindexerutility
+#/usr/share/apps/akonadi_nepomuk_feeder/akonadi_nepomuk_feeder.notifyrc
+#/usr/share/apps/nepomukpimindexerutility/nepomukpimindexerutility.rc
+#
 %define		_state	stable
 %define		qtver	4.8.1
 
@@ -6,12 +12,12 @@
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.9.4
+Version:	4.10.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	46f492e41228ef0a23e012c123fb2d68
+# Source0-md5:	855937d88b92edae7c535550ff38704e
 Patch100:	%{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -138,6 +144,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonaditray
 %attr(755,root,root) %{_bindir}/akonadi2xml
 %attr(755,root,root) %{_bindir}/akonadi_birthdays_resource
+%attr(755,root,root) %{_bindir}/akonadi_icaldir_resource
 %attr(755,root,root) %{_bindir}/akonadi_imap_resource
 %attr(755,root,root) %{_bindir}/akonadi_kolabproxy_resource
 %attr(755,root,root) %{_bindir}/akonadi_microblog_resource
@@ -154,7 +161,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libakonadi-filestore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkmindexreader.so.?
 %attr(755,root,root) %{_libdir}/libkmindexreader.so.*.*.*
-%attr(755,root,root) %{_libdir}/libkdepim-runtime-dms-copy.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_addressee.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_contactgroup.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_mail.so
@@ -207,6 +213,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/davgroupwareresource.desktop
 %{_datadir}/akonadi/agents/googlecalendarresource.desktop
 %{_datadir}/akonadi/agents/googlecontactsresource.desktop
+%{_datadir}/akonadi/agents/icaldirresource.desktop
 %{_datadir}/akonadi/agents/icalresource.desktop
 %{_datadir}/akonadi/agents/imapresource.desktop
 %{_datadir}/akonadi/agents/invitationsagent.desktop
