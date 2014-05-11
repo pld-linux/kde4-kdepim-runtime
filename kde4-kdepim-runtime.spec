@@ -140,8 +140,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_localbookmarks_resource
 %attr(755,root,root) %{_bindir}/akonadi_maildispatcher_agent
 %attr(755,root,root) %{_bindir}/akonadi_mailtransport_dummy_resource
-##%attr(755,root,root) %{_bindir}/akonadi_nepomuk_feeder
-##%attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/akonadi_pop3_resource
@@ -151,7 +149,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_icaldir_resource
 %attr(755,root,root) %{_bindir}/akonadi_imap_resource
 %attr(755,root,root) %{_bindir}/akonadi_kolabproxy_resource
-##%attr(755,root,root) %{_bindir}/akonadi_microblog_resource
 %attr(755,root,root) %{_bindir}/gidmigrator
 %attr(755,root,root) %{_bindir}/kaddressbookmigrator
 %attr(755,root,root) %{_bindir}/kmail-migrator
@@ -187,10 +184,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/akonadi_vcard_resource.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_kalarm_dir_resource.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_kalarm_resource.so
-##%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_calendar_feeder.so
-##%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_contact_feeder.so
-##%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_email_feeder.so
-##%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_note_feeder.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_kalarm.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_socialnotification.so
 %attr(755,root,root) %{_libdir}/kde4/kabc_akonadi.so
@@ -238,11 +231,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/maildirresource.desktop
 %{_datadir}/akonadi/agents/maildispatcheragent.desktop
 %{_datadir}/akonadi/agents/mboxresource.desktop
-##%{_datadir}/akonadi/agents/microblog.desktop
 %{_datadir}/akonadi/agents/migrationagent.desktop
 %{_datadir}/akonadi/agents/mixedmaildirresource.desktop
 %{_datadir}/akonadi/agents/mtdummyresource.desktop
-##%{_datadir}/akonadi/agents/nepomuktagresource.desktop
 %{_datadir}/akonadi/agents/newmailnotifieragent.desktop
 %{_datadir}/akonadi/agents/nntpresource.desktop
 %{_datadir}/akonadi/agents/notesresource.desktop
@@ -272,17 +263,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kcm_akonadi_server.desktop
 %{_datadir}/kde4/services/kresources/kabc/akonadi.desktop
 %{_datadir}/kde4/services/kresources/kcal/akonadi.desktop
-##%{_datadir}/kde4/services/nepomukcalendarfeeder.desktop
-##%{_datadir}/kde4/services/nepomukcontactfeeder.desktop
-##%{_datadir}/kde4/services/nepomukmailfeeder.desktop
-##%{_datadir}/kde4/services/nepomuknotefeeder.desktop
-##%{_datadir}/kde4/servicetypes/akonadinepomukfeeder.desktop
 %{_datadir}/kde4/servicetypes/davgroupwareprovider.desktop
 %{_datadir}/mime/packages/accountwizard-mime.xml
 %{_datadir}/mime/packages/kdepim-mime.xml
 %{_datadir}/mime/packages/x-vnd.akonadi.socialnotification.xml
-##%{_datadir}/ontology/kde/aneo.ontology
-##%{_datadir}/ontology/kde/aneo.trig
 %{_libdir}/kde4/imports/org/kde/*.qml
 %{_libdir}/kde4/imports/org/kde/*.png
 %{_libdir}/kde4/imports/org/kde/qmldir
