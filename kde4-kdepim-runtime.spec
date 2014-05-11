@@ -12,12 +12,12 @@
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.12.4
+Version:	4.13.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	c2d62b59ef236057fc054e4717f9c9bb
+# Source0-md5:	22a0122023ffe6ed4fc205ea21d22944
 Patch100:	%{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -140,8 +140,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_localbookmarks_resource
 %attr(755,root,root) %{_bindir}/akonadi_maildispatcher_agent
 %attr(755,root,root) %{_bindir}/akonadi_mailtransport_dummy_resource
-%attr(755,root,root) %{_bindir}/akonadi_nepomuk_feeder
-%attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
+##%attr(755,root,root) %{_bindir}/akonadi_nepomuk_feeder
+##%attr(755,root,root) %{_bindir}/akonadi_nepomuktag_resource
 %attr(755,root,root) %{_bindir}/akonadi_nntp_resource
 %attr(755,root,root) %{_bindir}/akonadi_vcarddir_resource
 %attr(755,root,root) %{_bindir}/akonadi_pop3_resource
@@ -151,10 +151,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_icaldir_resource
 %attr(755,root,root) %{_bindir}/akonadi_imap_resource
 %attr(755,root,root) %{_bindir}/akonadi_kolabproxy_resource
-%attr(755,root,root) %{_bindir}/akonadi_microblog_resource
+##%attr(755,root,root) %{_bindir}/akonadi_microblog_resource
 %attr(755,root,root) %{_bindir}/gidmigrator
 %attr(755,root,root) %{_bindir}/kaddressbookmigrator
 %attr(755,root,root) %{_bindir}/kmail-migrator
+%attr(755,root,root) %{_bindir}/knotes-migrator
 %attr(755,root,root) %{_bindir}/kres-migrator
 #%attr(755,root,root) %ghost %{_libdir}/libakonadi-xml.so.?
 #%attr(755,root,root) %{_libdir}/libakonadi-xml.so.*.*.*
@@ -165,6 +166,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libakonadi-filestore.so.?
 %attr(755,root,root) %{_libdir}/libakonadi-filestore.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libkmindexreader.so.?
+%attr(755,root,root) %{_libdir}/libfolderarchivesettings.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libfolderarchivesettings.so.4
 %attr(755,root,root) %{_libdir}/libkmindexreader.so.*.*.*
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_addressee.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_contactgroup.so
@@ -184,10 +187,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/akonadi_vcard_resource.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_kalarm_dir_resource.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_kalarm_resource.so
-%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_calendar_feeder.so
-%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_contact_feeder.so
-%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_email_feeder.so
-%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_note_feeder.so
+##%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_calendar_feeder.so
+##%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_contact_feeder.so
+##%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_email_feeder.so
+##%attr(755,root,root) %{_libdir}/kde4/akonadi_nepomuk_note_feeder.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_kalarm.so
 %attr(755,root,root) %{_libdir}/kde4/akonadi_serializer_socialnotification.so
 %attr(755,root,root) %{_libdir}/kde4/kabc_akonadi.so
@@ -212,6 +215,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_microblog.desktop
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_kalarm.desktop
 %{_datadir}/apps/akonadi/plugins/serializer/akonadi_serializer_socialnotification.desktop
+%{_datadir}/apps/kconf_update/newmailnotifier.upd
 %dir %{_datadir}/akonadi
 %dir %{_datadir}/akonadi/agents
 %{_datadir}/akonadi/agents/akonotesresource.desktop
@@ -234,11 +238,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/maildirresource.desktop
 %{_datadir}/akonadi/agents/maildispatcheragent.desktop
 %{_datadir}/akonadi/agents/mboxresource.desktop
-%{_datadir}/akonadi/agents/microblog.desktop
+##%{_datadir}/akonadi/agents/microblog.desktop
 %{_datadir}/akonadi/agents/migrationagent.desktop
 %{_datadir}/akonadi/agents/mixedmaildirresource.desktop
 %{_datadir}/akonadi/agents/mtdummyresource.desktop
-%{_datadir}/akonadi/agents/nepomuktagresource.desktop
+##%{_datadir}/akonadi/agents/nepomuktagresource.desktop
 %{_datadir}/akonadi/agents/newmailnotifieragent.desktop
 %{_datadir}/akonadi/agents/nntpresource.desktop
 %{_datadir}/akonadi/agents/notesresource.desktop
@@ -253,6 +257,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/akonadi/accountwizard
 %{_datadir}/apps/akonadi/firstrun
 %{_datadir}/apps/akonadi_maildispatcher_agent
+%{_datadir}/apps/akonadi_facebook_resource
+%{_datadir}/apps/akonadi_kolabproxy_resource
+%{_datadir}/apps/akonadi_newmailnotifier_agent
 %{_datadir}/config/accountwizard.knsrc
 %{_datadir}/config/kmail-migratorrc
 %{_datadir}/config/kres-migratorrc
@@ -265,16 +272,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/kcm_akonadi_server.desktop
 %{_datadir}/kde4/services/kresources/kabc/akonadi.desktop
 %{_datadir}/kde4/services/kresources/kcal/akonadi.desktop
-%{_datadir}/kde4/services/nepomukcalendarfeeder.desktop
-%{_datadir}/kde4/services/nepomukcontactfeeder.desktop
-%{_datadir}/kde4/services/nepomukmailfeeder.desktop
-%{_datadir}/kde4/services/nepomuknotefeeder.desktop
-%{_datadir}/kde4/servicetypes/akonadinepomukfeeder.desktop
+##%{_datadir}/kde4/services/nepomukcalendarfeeder.desktop
+##%{_datadir}/kde4/services/nepomukcontactfeeder.desktop
+##%{_datadir}/kde4/services/nepomukmailfeeder.desktop
+##%{_datadir}/kde4/services/nepomuknotefeeder.desktop
+##%{_datadir}/kde4/servicetypes/akonadinepomukfeeder.desktop
 %{_datadir}/kde4/servicetypes/davgroupwareprovider.desktop
 %{_datadir}/mime/packages/accountwizard-mime.xml
 %{_datadir}/mime/packages/kdepim-mime.xml
-%{_datadir}/ontology/kde/aneo.ontology
-%{_datadir}/ontology/kde/aneo.trig
+%{_datadir}/mime/packages/x-vnd.akonadi.socialnotification.xml
+##%{_datadir}/ontology/kde/aneo.ontology
+##%{_datadir}/ontology/kde/aneo.trig
 %{_libdir}/kde4/imports/org/kde/*.qml
 %{_libdir}/kde4/imports/org/kde/*.png
 %{_libdir}/kde4/imports/org/kde/qmldir
@@ -284,12 +292,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde4/imports/org/kde/akonadi/*.png
 %{_libdir}/kde4/imports/org/kde/akonadi/qmldir
 %{_desktopdir}/kde4/akonaditray.desktop
+%{_iconsdir}/*/*/apps/akonaditray.png
+%{_iconsdir}/*/*/apps/facebookresource.png
 %{_iconsdir}/*/*/apps/kolab.png
 %{_iconsdir}/*/*/apps/ox.png
 
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libakonadi-filestore.so
+%attr(755,root,root) %{_libdir}/libfolderarchivesettings.so
 #%attr(755,root,root) %{_libdir}/libakonadi-xml.so
 %attr(755,root,root) %{_libdir}/libkdepim-copy.so
 %attr(755,root,root) %{_libdir}/libkmindexreader.so
