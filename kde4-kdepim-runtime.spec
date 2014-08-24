@@ -12,12 +12,12 @@
 Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
-Version:	4.13.2
+Version:	4.14.0
 Release:	1
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
-# Source0-md5:	d61377154335a36fc0005b8d552b3279
+Source0:	http://download.kde.org/%{_state}/%{version}/src/%{orgname}-%{version}.tar.xz
+# Source0-md5:	7a509d33b77996afbaf2d068bd2552ba
 Patch100:	%{name}-branch.diff
 URL:		http://www.kde.org/
 BuildRequires:	Qt3Support-devel >= %{qtver}
@@ -33,10 +33,12 @@ BuildRequires:	boost-devel >= 1.35.0
 BuildRequires:	cmake >= 2.8.0
 BuildRequires:	kde4-kdelibs-devel >= %{version}
 BuildRequires:	kde4-kdepimlibs-devel >= %{version}
+BuildRequires:	libaccounts-qt-devel >= 1.11
 BuildRequires:	libkfbapi-devel >= 1.0
 BuildRequires:	libkgapi-devel >= 1.9.81
-BuildRequires:	libkolab-devel >= 0.4.1
+BuildRequires:	libkolab-devel >= 0.5.2
 BuildRequires:	libkolabxml-devel >= 1.0
+BuildRequires:	libsignon-qt-devel >= 8.56
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-progs
 BuildRequires:	qjson-devel
@@ -130,6 +132,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_googlecontacts_resource
 %attr(755,root,root) %{_bindir}/akonadi_invitations_agent
 %attr(755,root,root) %{_bindir}/akonadi_kdeaccounts_resource
+%attr(755,root,root) %{_bindir}/akonadi_kolab_resource
 %attr(755,root,root) %{_bindir}/akonadi_migration_agent
 %attr(755,root,root) %{_bindir}/akonadi_mixedmaildir_resource
 %attr(755,root,root) %{_bindir}/akonadi_newmailnotifier_agent
@@ -227,6 +230,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/akonadi/agents/kdeaccountsresource.desktop
 #%{_datadir}/akonadi/agents/knutresource.desktop
 %{_datadir}/akonadi/agents/kolabproxyresource.desktop
+%{_datadir}/akonadi/agents/kolabresource.desktop
 %{_datadir}/akonadi/agents/localbookmarksresource.desktop
 %{_datadir}/akonadi/agents/maildirresource.desktop
 %{_datadir}/akonadi/agents/maildispatcheragent.desktop
