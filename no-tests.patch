@@ -1,0 +1,11 @@
+--- kdepim-runtime-4.14.10/plugins/CMakeLists.txt.orig	2015-06-25 22:42:43.000000000 +0200
++++ kdepim-runtime-4.14.10/plugins/CMakeLists.txt	2019-09-29 21:16:23.000000000 +0200
+@@ -1,7 +1,7 @@
+ add_definitions( -DQT_NO_CAST_FROM_ASCII )
+ add_definitions( -DQT_NO_CAST_TO_ASCII )
+ 
+-add_subdirectory( tests )
++#add_subdirectory( tests )
+ 
+ include_directories(
+         ${Boost_INCLUDE_DIR}
