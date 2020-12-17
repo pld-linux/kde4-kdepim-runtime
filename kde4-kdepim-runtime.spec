@@ -13,7 +13,7 @@ Summary:	Runtime Personal Information Management (PIM) for KDE
 Summary(pl.UTF-8):	Zarządca informacji osobistej (PIM) dla KDE
 Name:		kde4-kdepim-runtime
 Version:	4.14.10
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Applications
 Source0:	http://download.kde.org/Attic/applications/15.04.3/src/%{orgname}-%{version}.tar.xz
